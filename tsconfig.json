@@ -1,0 +1,21 @@
+{
+  "compilerOptions": {
+    "allowJs": false,
+    "baseUrl": "./",
+    "declaration": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "lib": ["dom", "es2017", "es5", "es6"],
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "noUnusedLocals": false,
+    "outDir": "build",
+    "resolveJsonModule": true,
+    "sourceMap": true,
+    "strict": true,
+    "target": "es5",
+    "typeRoots": ["node_modules/@types"]
+  },
+  "exclude": ["node_modules", "src/**/*.spec.ts"],
+  "include": ["src/**/*"]
+}

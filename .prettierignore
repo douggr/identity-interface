@@ -1,0 +1,7 @@
+*.lock
+*.log
+*.scss.d.ts
+*.transpiled.jsx
+/build
+/node_modules
+/stats.json

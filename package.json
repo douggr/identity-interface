@@ -1,0 +1,54 @@
+{
+  "authors": [
+    {
+      "homepage": "https://dl2.dev",
+      "name": "DL2 IT Services, Ltd"
+    },
+    {
+      "homepage": "https://github.com/douggr",
+      "name": "Douglas Gontijo"
+    }
+  ],
+  "dependencies": {
+    "jsonwebtoken": "^8.5.0"
+  },
+  "description": "Simple identity skeleton",
+  "devDependencies": {
+    "@commitlint/cli": "^7.5",
+    "@commitlint/config-angular": "^7.5",
+    "@types/jsonwebtoken": "^8.3.2",
+    "fs-extra": "^7.0.1",
+    "husky": "^2.1.0",
+    "jest": "^24.7.1",
+    "prettier": "^1.17.0",
+    "ts-jest": "^24.0.2",
+    "ts-node": "^8.1.0",
+    "tslint": "^5.16.0",
+    "tslint-consistent-codestyle": "^1.15",
+    "tslint-eslint-rules": "^5.4",
+    "typescript": "^3.4.5"
+  },
+  "engines": {
+    "node": "^9 || ^10"
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -x @commitlint/config-angular -e",
+      "pre-commit": "yarn lint"
+    }
+  },
+  "license": "MIT",
+  "name": "@dl2/identity-interface",
+  "repository": "https://github.com/douggr/identity-interface",
+  "scripts": {
+    "build": "ts-node tools/copy-files && tsc",
+    "build:fast": "ts-node tools/copy-files && tsc",
+    "format": "yarn ~prettier && yarn lint --fix",
+    "lint": "tslint -p tsconfig.json",
+    "prebuild": "yarn test",
+    "pretest": "yarn lint",
+    "test": "NODE_ENV=test jest",
+    "~prettier": "prettier --ignore-path .gitignore --arrow-parens always --print-width 79 --trailing-comma all --write --parser typescript '**/*.ts'"
+  },
+  "version": "2.0.1"
+}
